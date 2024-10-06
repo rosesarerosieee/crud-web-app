@@ -1,10 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
+import CreateUser from "./components/create";
+import ReadUsers from "./components/read";
+import UpdateUser from "./components/update";
+import DeleteUser from "./components/delete";
 
 function App() {
   return (
     <div className="App">
-      <h1>blank</h1>
+      <CreateUser />
+      <ReadUsers />
+      <UpdateUser />
+      <DeleteUser />
     </div>
   );
 }

@@ -6,9 +6,21 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "assert": "^2.1.0",
+    "axios": "^1.7.7",
+    "browserify-zlib": "^0.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "https-browserify": "^1.0.0",
+    "mongoose": "^8.7.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.4",
+    "util": "^0.12.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -16,6 +28,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "browser": {
+    "http": "stream-http",
+    "https": "https-browserify",
+    "zlib": "browserify-zlib",
+    "stream": "stream-browserify"
   },
   "eslintConfig": {
     "extends": [
