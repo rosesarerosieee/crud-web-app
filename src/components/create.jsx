@@ -26,31 +26,39 @@ const CreateUser = () => {
 
   return (
     <div>
-      <h2>Create User</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <input
-          type="number"
-          placeholder="Age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-          required
-        />
-        <button type="submit">Create User</button>
-      </form>
+      <div className="w-full h-screen flex items-center justify-center">
+        <div className="flex items-center justify-start flex-col w-[300px] h-[50vh] bg-[pink]">
+          <h2 className="text-black font-extrabold text-[2rem]">Create User</h2>
+          <form onSubmit={handleSubmit} className="flex items-center justify-center flex-col pt-[20px]">
+            <div className="flex flex-col gap-[20px]">
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <input
+                type="number"
+                placeholder="Age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                required
+              />
+            </div>
+            <div className="">
+              <button type="submit">Create User</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,16 +1,16 @@
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/navbar";
+import AppRouter from "./routers";
 import CreateUser from "./components/create";
-import ReadUsers from "./components/read";
-import UpdateUser from "./components/update";
-import DeleteUser from "./components/delete";
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <CreateUser />
-      <ReadUsers />
-      <UpdateUser />
-      <DeleteUser />
-    </div>
+    <Router>
+      <Navbar />
+      <AppRouter /> 
+    </Router>
   );
 }
 
