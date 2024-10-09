@@ -15,17 +15,21 @@ const DeleteUser = () => {
   };
 
   return (
-    <div>
-      <h2>Delete User</h2>
-      <input
-        type="text"
-        placeholder="User ID"
-        value={id}
-        onChange={(e) => setId(e.target.value)}
-        required
-      />
-      <button onClick={handleDelete}>Delete User</button>
-    </div>
+    <>
+      <div className="w-full h-screen flex items-center justify-center">
+        <div className="flex items-center justify-start flex-col w-[300px] h-[50vh] bg-[pink]">
+          <h2>Delete User</h2>
+          <input
+            type="text"
+            placeholder="User ID"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            required
+          />
+          <button onClick={handleDelete}>Delete User</button>
+        </div>
+      </div>
+    </>
   );
 };
 
