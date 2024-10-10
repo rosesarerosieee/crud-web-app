@@ -18,7 +18,7 @@ const DeleteUser = () => {
     <>
       <div className="w-full h-screen flex items-center justify-center">
         <div className="flex items-center justify-start flex-col w-[300px] h-[50vh] bg-[pink]">
-          <h2>Delete User</h2>
+          <h2 className="font-extrabold text-[2rem]">Delete User</h2>
           <input
             type="text"
             placeholder="User ID"

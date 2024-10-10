@@ -26,10 +26,13 @@ const CreateUser = () => {
 
   return (
     <div>
-      <div className="w-full h-screen flex items-center justify-center">
-        <div className="flex items-center justify-start flex-col w-[300px] h-[50vh] bg-[pink]">
+      <div className="w-full h-screen flex items-center justify-center bg-[whitesmoke]">
+        <div className="flex items-center justify-start flex-col w-[300px] h-[50vh] bg-[#e1d9d7]">
           <h2 className="text-black font-extrabold text-[2rem]">Create User</h2>
-          <form onSubmit={handleSubmit} className="flex items-center justify-center flex-col pt-[20px]">
+          <form
+            onSubmit={handleSubmit}
+            className="flex items-center justify-center flex-col pt-[20px]"
+          >
             <div className="flex flex-col gap-[20px]">
               <input
                 type="text"
@@ -53,8 +56,13 @@ const CreateUser = () => {
                 required
               />
             </div>
-            <div className="">
-              <button type="submit">Create User</button>
+            <div className="pt-[20px]">
+              <button
+                type="submit"
+                className="w-[150px] h-[50px] text-center rounded-[5px]  bg-[whitesmoke]"
+              >
+                Create User
+              </button>
             </div>
           </form>
         </div>

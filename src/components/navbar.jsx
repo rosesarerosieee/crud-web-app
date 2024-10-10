@@ -3,19 +3,27 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="w-full h-[12vh] bg-red-500 flex items-center justify-end">
-        <ul className="">
+      <div className="w-full h-[12vh] bg-red-500 flex items-center justify-center fixed top-0">
+        <ul className="flex items-center justify-center w-full h-full gap-[20px]">
           <li>
-            <Link to="/">Create User</Link>
+            <Link to="/" className="cursor-pointer">
+              Create User
+            </Link>
           </li>
           <li>
-            <Link to="read">List of User</Link>
+            <Link to="read" className="cursor-pointer">
+              List of User
+            </Link>
           </li>
           <li>
-            <Link to="update">Update User</Link>
+            <Link to="update" className="cursor-pointer">
+              Update User
+            </Link>
           </li>
           <li>
-            <Link to="delete">Delete User</Link>
+            <Link to="delete" className="cursor-pointer">
+              Delete User
+            </Link>
           </li>
         </ul>
       </div>
