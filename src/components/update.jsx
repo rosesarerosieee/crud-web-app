@@ -23,8 +23,8 @@ const UpdateUser = () => {
 
   return (
     <>
-      <div className="w-full h-screen flex items-center justify-center">
-        <div className="flex items-center justify-start flex-col w-[300px] h-[50vh] bg-[whitesmoke]">
+      <div className="w-full h-screen flex items-center justify-center bg-[whitesmoke">
+        <div className="flex items-center justify-start flex-col w-[300px] h-[50vh] bg-[#e1d9d7]">
           <h2 className="font-extrabold text-[2rem]">Update User</h2>
           <form
             onSubmit={handleSubmit}
