@@ -1,27 +1,23 @@
 import React, { useState } from "react";
-import axios from "axios";
+
+import { createUser } from "../api/api";
 
 const CreateUser = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:5000/users", {
-        name: name,
-        email: email,
-        age: age,
-      })
-
-      .then((response) => {
-        alert("User created successfully!");
-        setName("");
-        setEmail("");
-        setAge("");
-      })
-      .catch((err) => console.error(err));
+    try {
+      await createUser({ name, email, age });
+      alert("User created Succesfully!");
+      setName("");
+      setEmail("");
+      setAge("");
+    } catch (err) {
+      alert("Error creating user");
+    }
   };
 
   return (

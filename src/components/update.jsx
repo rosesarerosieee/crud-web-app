@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { updateUser } from "../api/api";
 
 const UpdateUser = () => {
   const [id, setId] = useState("");
@@ -7,18 +7,18 @@ const UpdateUser = () => {
   const [email, setEmail] = useState("");
   const [age, setAge] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .put(`http://localhost:5000/users/${id}`, { name, email, age })
-      .then((response) => {
-        alert("User updated successfully!");
-        setId("");
-        setName("");
-        setEmail("");
-        setAge("");
-      })
-      .catch((err) => console.error(err));
+    try {
+      await updateUser(id, { name, email, age });
+      alert("Updated Successfully!");
+      setId("");
+      setName("");
+      setEmail("");
+      setAge("");
+    } catch (err) {
+      alert("Error Updating data");
+    }
   };
 
   return (

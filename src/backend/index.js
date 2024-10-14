@@ -14,7 +14,6 @@ mongoose
   .then(() => console.log("connected to MongoDB"))
   .catch((er) => console.log(er));
 
-
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
@@ -35,12 +34,12 @@ app.post("/users", async (req, res) => {
   res.json(newUser);
 });
 
-
 app.put("/users/:id", async (req, res) => {
-  const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
   res.json(updatedUser);
 });
-
 
 app.delete("/users/:id", async (req, res) => {
   await User.findByIdAndDelete(req.params.id);

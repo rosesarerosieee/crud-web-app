@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import axios from "axios";
+
+import { deleteUser } from "../api/api";
 
 const DeleteUser = () => {
   const [id, setId] = useState("");
 
-  const handleDelete = () => {
-    axios
-      .delete(`http://localhost:5000/users/${id}`)
-      .then((response) => {
-        alert("User deleted successfully!");
-        setId("");
-      })
-      .catch((err) => console.error(err));
+  const handleDelete = async () => {
+    try {
+      await deleteUser(id);
+      setId("");
+      alert("Succesfully delete the user");
+    } catch (err) {
+      alert("Error deleting the user");
+    }
   };
 
   return (
