@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="w-full h-[12vh] bg-red-500 flex items-center justify-center fixed top-0">
-        <ul className="flex items-center justify-center w-full h-full gap-[20px]">
+      <div className="w-full h-[12vh] bg-[#e1d9d7]  flex items-center justify-center fixed top-0 font-extrabold xl:text-[1.5rem]">
+        <ul className="flex items-center justify-center w-full h-full gap-[20px] xl:gap-[50px]">
           <li>
             <Link to="/" className="cursor-pointer">
               Create User
@@ -26,8 +26,6 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-
-        
       </div>
     </>
   );
