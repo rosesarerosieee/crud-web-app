@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { updateUser } from "../api/api";
+import CardContainer from "./card";
 
 const UpdateUser = () => {
   const [id, setId] = useState("");
@@ -21,53 +22,62 @@ const UpdateUser = () => {
     }
   };
 
+  const handleEmpty = () => {
+    setId("");
+    setName("");
+    setEmail("");
+    setAge("");
+  };
+
   return (
     <>
-      <div className="w-full h-screen flex items-center justify-center bg-[whitesmoke">
-        <div className="flex items-center justify-start flex-col w-[300px] h-[50vh] bg-[#e1d9d7]">
-          <h2 className="font-extrabold text-[2rem]">Update User</h2>
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col items-center justify-center"
+      <CardContainer title={"Update User"} onSubmit={handleSubmit}>
+        <div className="flex flex-col items-center justify-center gap-[10px]">
+          <input
+            type="text"
+            placeholder="User ID"
+            value={id}
+            onChange={(e) => setId(e.target.value)}
+            required
+            className="font-extrabold xl:w-[300px] xl:h-[50px] xl:text-center"
+          />
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="font-extrabold xl:w-[300px] xl:h-[50px] xl:text-center"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="font-extrabold xl:w-[300px] xl:h-[50px] xl:text-center"
+          />
+          <input
+            type="number"
+            placeholder="Age"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            className="font-extrabold xl:w-[300px] xl:h-[50px] xl:text-center"
+          />
+          <button
+            className="w-[50px] h-[30px] text-center rounded-[5px]  bg-[whitesmoke]"
+            onClick={handleEmpty}
           >
-            <div className="flex flex-col items-center justify-center">
-              <input
-                type="text"
-                placeholder="User ID"
-                value={id}
-                onChange={(e) => setId(e.target.value)}
-                required
-              />
-              <input
-                type="text"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                type="number"
-                placeholder="Age"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
-              />
-            </div>
-            <div className="pt-[30px]">
-              <button
-                type="submit"
-                className="w-[150px] h-[50px] text-center rounded-[5px]  bg-[whitesmoke]"
-              >
-                Update User
-              </button>
-            </div>
-          </form>
+            Reset
+          </button>
         </div>
-      </div>
+        <div className="pt-[30px] flex justify-between gap-[20px] ">
+          <button
+            type="submit"
+            className="w-[100px] h-[50px] text-center rounded-[5px]  bg-[whitesmoke]"
+          >
+            Update User
+          </button>
+        </div>
+      </CardContainer>
     </>
   );
 };

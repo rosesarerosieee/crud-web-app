@@ -20,16 +20,16 @@ const ReadUsers = () => {
 
   return (
     <div className="w-full h-screen flex items-center justify-center bg-[whitesmoke]">
-      <div className="flex items-center justify-start flex-col w-[500px] h-auto bg-[#e1d9d7] p-5">
+      <div className="flex items-center justify-start flex-col w-[500px] h-auto bg-[#e1d9d7] p-5 xl:w-[90%] xl:h-[75vh]">
         <h2 className="text-black font-extrabold text-[2rem] mb-[20px]">
           Users List
         </h2>
         {error ? (
           <p>{error}</p>
         ) : (
-          <table className="table-auto w-full text-center">
+          <table className="table-auto text-center">
             <thead>
-              <tr className="bg-[whitesmoke]">
+              <tr className="bg-[whitesmoke]  w-full">
                 <th className="px-4 py-2">Name</th>
                 <th className="px-4 py-2">Email</th>
                 <th className="px-4 py-2">Age</th>
