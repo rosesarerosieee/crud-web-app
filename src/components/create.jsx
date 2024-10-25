@@ -17,52 +17,47 @@ const CreateUser = () => {
       setEmail("");
       setAge("");
     } catch (err) {
-      alert("Error creating user");
+      alert("Error creating user", err);
     }
   };
 
   return (
     <>
       <CardContainer title={"Create User"} onSubmit={handleSubmit}>
-        <form
-          onSubmit={handleSubmit}
-          className="flex items-center justify-center flex-col pt-[20px]"
-        >
-          <div className="flex flex-col gap-[20px]">
-            <input
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="xl:w-[300px] xl:h-[50px] xl:text-center"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="xl:w-[300px] xl:h-[50px] xl:text-center"
-            />
-            <input
-              type="number"
-              placeholder="Age"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-              required
-              className="xl:w-[300px] xl:h-[50px] xl:text-center"
-            />
-          </div>
-          <div className="pt-[20px]">
-            <button
-              type="submit"
-              className="w-[150px] h-[50px] text-center rounded-[5px]  bg-[whitesmoke]"
-            >
-              Create User
-            </button>
-          </div>
-        </form>
+        <div className="flex flex-col gap-[20px]">
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="xl:w-[300px] xl:h-[50px] xl:text-center"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="xl:w-[300px] xl:h-[50px] xl:text-center"
+          />
+          <input
+            type="number"
+            placeholder="Age"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            required
+            className="xl:w-[300px] xl:h-[50px] xl:text-center"
+          />
+        </div>
+        <div className="pt-[20px]">
+          <button
+            type="submit"
+            className="w-[150px] h-[50px] text-center rounded-[5px]  bg-[whitesmoke]"
+          >
+            Create User
+          </button>
+        </div>
       </CardContainer>
     </>
   );
