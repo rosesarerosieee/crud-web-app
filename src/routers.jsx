@@ -1,8 +1,8 @@
 import {Routes, Route } from "react-router-dom";
-import CreateUser from "./components/create";
-import ReadUsers from "./components/read";
-import DeleteUser from "./components/delete";
-import UpdateUser from "./components/update";
+import CreateUser from "./pages/create";
+import ReadUsers from "./pages/read";
+import DeleteUser from "./pages/delete";
+import UpdateUser from "./pages/update";
 
 const AppRouter = () => {
   return (
